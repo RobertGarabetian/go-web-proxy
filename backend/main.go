@@ -44,7 +44,17 @@ func handleDogRequest(w http.ResponseWriter, req *http.Request) {
 
 }
 func formatBreedName(breed string) string {
-	// Convert breed name to lowercase and replace spaces with hyphens
+	breedMap := map[string]string{
+		"Weiner Dog":          "dachshund",
+		"Australian Shepherd": "australian/shepherd",
+		"Pitbull":             "pitbull",
+		"Golden Retriever":    "retriever/golden",
+	}
+
+	if apiBreed, ok := breedMap[breed]; ok {
+		return apiBreed
+	}
+
 	breed = strings.ToLower(breed)
 	breed = strings.ReplaceAll(breed, " ", "-")
 	return breed

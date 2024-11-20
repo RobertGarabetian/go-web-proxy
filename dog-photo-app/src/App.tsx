@@ -42,7 +42,7 @@ function App() {
         </ul>
       </div>
       <div className="col-span-1 flex flex-col items-center justify-center p-4">
-        <img src={imageUrl} alt="dog" className="max-w-full max-h-full" />
+        <img src={imageUrl} alt="dog" className="max-w-96 max-h-96 border" />
       </div>
     </div>
   );
